@@ -57,13 +57,461 @@
 						<li>Softwareentwicklungsmodelle</li>
 						<li>Teststufen</li>
 						<li>Testarten</li>
-						<li>Wartungstest</li>
+						<li>Wartungstest ...</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Software-entwicklungsmodelle</h2>
-					<p>...</p>
+				</section>
+
+				<section>
+					<h2>Das allgemeine V-Modell</h2>
+					<ul>
+						<li>Entwicklungsarbeiten und Testarbeiten sind zueinander korrespondierend und gleichberechtigt</li>
+						<li>links 
+							<ul>
+								<li>immer detaillierter werdenden Entwicklungsarbeiten</li>
+								<li>verifizierende Tätigkeiten</li>
+							</ul>
+						</li>
+						<li>rechts 
+							<ul>
+								<li>immer gröber werdenden Testarbeiten</li>
+								<li>validierende Tätigkeiten</li>
+							</ul>
+						</li>
+						<li>Die Teststufen testen immer die korrespondierende Entwicklungsstufe</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Das allgemeine V-Modell</h2>
+					<img src="img/vmodell.png" style="height: 13em; padding: 0.5em">
+				</section>
+
+				<section>
+					<h2>Validierung und Verifizierung</h2>
+					<ul>
+						<p>Validierung: überprüfen ob Ergebnisse die Anforderung erfüllen</p>
+							<ul>
+								<li>Ist es das richtige System?</li>
+								<li>Die Schritte des Testens sind validierende Maßnahmen</li>
+								<li>Bei den Tests werden die Anforderungen der relevanten Abstraktionsebene berücksichtigt</li>
+							</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Validierung und Verifizierung</h2>
+					<ul>
+						<p>Verifizierung: überprüfen ob die Spezifikation korrekt umgesetzt wurde</p>
+						<ul>
+							<li>Ist das System richtig?</li>
+							<li>Bei der Entwicklung wird das Ergebnis einer Phase mit den Phaseneingangsdokumenten verifiziert</li>
+							<li>Dies geschieht unabhängig von einem beabsichtigten Nutzen eines Produktes</li>
+						</ul>
+					</ul>	
+				</section>
+
+				<section>
+					<h2>Iterativ inkrementelle Entwicklungsmodelle</h2>
+					<ul>
+						<li>Ziel: nicht an den Kundenerwartungen vorbei entwickeln</li>
+						<li>Testen muss sich dem Vorgehen anpassen</li>
+						<li>Für jeden Zyklus und jede Komponente müssen wiederholbare Tests erstellt werden</li>
+						<li>Kontinuirliche Integrations- und Regressionstests</li>
+						<li>Wenn Vorraussetzungen nicht erfüllt: Gefahr auf Verringerung der Zuverlässigkeit</li>
+						<li>Gefahrreduktion: V-Modell für jeden Zyklus</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Iterativ inkrementelle Entwicklungsmodelle</h2>
+					<img src="img/agile_test.png" style="padding: 0.5em">
+				</section>
+
+				<section>
+					<h2>Testen innerhalb eines Entwicklungslebenszyklus</h2>
+					<ul>
+						<li></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Teststufen</h2>
+				</section>
+
+				<section>
+					<h2>Teststufen allgemein</h2>
+					<ul>
+						<p>Jede Teststufe hat folgende Eigenschaften, welche spezifisch für diese sind</p>
+						<ul>
+							<li>Testobjekte</li>
+							<li>Testumgebung</li>
+							<li>Testziele</li>
+							<li>eventuelle Teststrategien</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Komponententest</h2>
+					<ul>
+						<li>Die erste Teststufe des V-Modells</li>
+						<li>Testen die kleinsten Softwareeinheiten (Module, Units oder Klassen)</li>
+						<li>Die entprechenden Tests heißen Modultest, Unittest, Klassentest oder unabhängig der Programmiersprache: Komponententest</li>
+						<li>Testbasis sind die komponentenspezifischen Anforderungen oder der Sourcecode (Whitebox-Testen)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Komponententest - Testobjekte</h2>
+					<ul>
+						<li>Typische Testobjekte sind: Klassen, Units und Skripte</li>
+						<li>Wichtig: Diese müssen isoliert von anderen Komponenten getestet werden (Mocken)</li>
+						<li>Durch Isolation können externe Einflüsse ausgeschlossen werden</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Komponententest - Testumgebung</h2>
+					<ul>
+						<li>In dieser Teststufe wird sehr entwicklungsnah gearbeitet</li>
+						<li>Zur Erstellung der Testtreiber ist Entwickler-Know-How notwendig</li>
+						<li>Tests werden in der Programmiersprache der Komponente geschrieben</li>
+						<li>Aus diesen Gründen werden die Komponententests oft von den Entwicklern geschrieben (Entwicklertest)</li>
+						<li>Komponententest wird oft mit Debugging verwechselt</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Komponententest - Testziele</h2>
+					<ul>
+						<li>Test der Funktionalität 
+							<ul>
+								<li>Testet Funkionalität laut Anforderung</li>
+								<li>Funkionalität ist hierbei das Ein-/Ausgabeverhalten der Komponente</li>
+								<li>Jeder Testfall deckt eine Ein-/Ausgabekombination ab</li>
+							</ul>
+						</li>
+						<li>Test auf Robustheit
+							<ul>
+								<li>Verwendung von nicht zulässigen Daten, Methodenaufrufen und Sonderfällen</li>
+								<li>Reaktion hierbei: angemessenes exception handling, kein Systemabsturz</li>
+								<li>Wird auch Negativtest genannt</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Komponententest - Testziele</h2>
+					<ul>
+						<li>Test der Effizienz
+							<ul>
+								<li>Wie geht das Programm mit den Ressourcen um?</li>
+								<li>z.B.: Verbrauch von Speicherplatz und benötigte Rechenzeit</li>
+								<li>Wird selten für alle Komponenten angewandt</li>
+							</ul>
+						</li>
+						<li>Test auf Wartbarkeit
+							<ul>
+								<li>Wie leicht lässt sich der Code ändern oder verbessern?</li>
+								<li>Gilt für Entwickler des Programms und Kollegen</li>
+								<li>Wichtig hierbei: Codestruktur, Kommentare, Dokumentation usw.</li>
+								<li>Lässt sich nicht durch dynamisches Testen realisieren</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Komponententest - Teststrategie</h2>
+					<ul>
+						<li>Möglich als Whitebox-Test, da sehr entwicklungsnah (Debugging)</li>
+						<li>Generell aber eher als Blackbox-Test</li>
+						<li>Bei agilen Methoden: Test-first Ansatz oder Test-Driven Development</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Integrationstest</h2>
+					<ul>
+						<li>Zweite Teststufe des V-Modells</li>
+						<li>Vorraussetzung: Komponenten wurden getestet und Fehler behoben</li>
+						<li>Integration: Zusammenführung mehrerer Komponenten in ein Teilsystem</li>
+						<li>Testen des Zusammenspiels einzelner Komponenten</li>
+						<li>Testbasis sind Softwaredesign und schnittstellenübergreifende Workflows und Usecases</li>
+						<li>Mehrere Integrationsstufen: Komponentenintegration, Subsystemintegration, Systemintegration, Zusammenspiel zwischen Hard- und Software</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Integrationstest - Testobjekte</h2>
+					<ul>
+						<li>Im Laufe der Integration werden Komponenten zu größeren Einheiten zusammengesetzt</li>
+						<li>An jedem solcher Schritte sollte (im Idealfall) ein Integrationstest ausgeführt werden</li>
+						<li>Testobjekte können auch mehrfach zusammengesetzte Subsysteme sein</li>
+						<li>Die wichtigsten Integrationstests testen die internen Schnittstellen zwischen Komponenten</li>
+						<li>Weitere Testobjekte: Integration von Standardprodukten oder Neuentwicklungen, Infrastrukturkomponenten, Datenbanksysteme</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Integrationstest - Testumgebung</h2>
+					<ul>
+						<li>Wie im Komponententests werden Testtreiber benötigt</li>
+						<li>Möglichkeit der Wiederverwendung der Komponententesttreiber</li>
+						<li>Es werden Monitore benötigt, welche den Datentransfer zwischen Komponenten mitlesen und protokollieren</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Integrationstest - Testziele</h2>
+					<ul>
+						<li>Schnittstellenfehler aufdecken (können die Komponenten miteinander kommunizieren?)</li>
+						<li>Folgende Fehler können durch funktionale Tests gefunden werden
+							<ul>
+								<li>Eine Komponente übermittelt keine oder falsche Daten</li>
+								<li>Eine Komponente interpretiert die Daten falsch</li>
+								<li>Eine Komponente übermittelt die Daten zu einem falschen Zeitpunkt</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Integrationstest - Testziele</h2>
+					<ul>
+						<li>Auch nicht funktionale Tests spielen eine Rolle
+							<ul>
+								<li>Wenn nicht funktionale Eigenschaften relevant sind</li>
+								<li>z.B. Last- und Performance Tests</li>
+							</ul>
+						</li>
+						<li>Kann auf Komponententests verzichtet werden?
+							<ul>
+								<li>Die meisten Fehlerwirkungen werden durch Fehlerzustände einzelner Komponenten verursacht</li>
+								<li>Der Zugang einer Komponente könnte nicht möglich sein und dadurch Fehlerzustände nicht gefunden werden</li>
+								<li>Tritt eine Fehlerwirkung auf, ist es schwierig den Fehlerzustand zu lokalisieren</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Integrationstest - Teststrategien</h2>
+					<ul>
+						<li>In welcher Reihenfolge werden Komponenten integriert?
+							<ul>
+								<li>Wichtig ist das Verhältnis zwischen Kosten und Nutzen</li>
+								<li>Komponenten werden zu unterschiedlichen Zeitpunkten fertiggestellt</li>
+								<li>Aufgabe des Testmanagers</li>
+								<li>Hängt von Randbedingungen ab, welche analysiert werden müssen (Systemarchitektur, Projektplan, Testkonzept)</li>
+								<li>Es existieren mehrere Basisstrategien</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Top-down-Integration</h2>
+					<ul>
+						<li>Test beginnt mit der Komponente welche Komponenten aufruft, aber selbst nicht aufgerufen wird</li>
+						<li>Vorteil: Testtreiber sind einfach; bereits getestete Komponenten bilden Ablaufumgebung</li>
+						<li>Nachteil: Untergeordnete Komponenten müssen gemockt werden</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Bottom-up-Integration</h2>
+					<ul>
+						<li>Test beginnt mit der Komponente welche Komponenten aufgerufen wird, aber selbst keine Komponenten aufruft</li>
+						<li>Vorteil: Es werden keine Mocks benötigt</li>
+						<li>Nachteil: Übergeordnete Komponenten müssen durch Testtreiber simuliert werden</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ad-hoc-Integration</h2>
+					<ul>
+						<li>Komponenten werden nach Reihenfolge der Fertigstellung integriert</li>
+						<li>Vorteil: Zeitgewinn, da Komponenten direkt nach Fertigstellung integriert werden</li>
+						<li>Nachteil: Es werden Platzhalter und Testtreiber benötigt</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Backbone-Integration</h2>
+					<ul>
+						<li>Es wird ein Programmskelett (Backbone) erstellt, in dem die Komponenten schrittweise integriert werden</li>
+						<li>Vorteil: Komponenten können in beliebiger Reihenfolge integriert werden</li>
+						<li>Nachteil: Ein aufwändiger Backbone muss erstellt werden</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Systemtest</h2>
+					<ul>
+						<li>Dritte Stufe des V-Modells</li>
+						<li>Test des integrierten Systems, ob die Anforderungen erfüllt sind</li>
+						<li>Das System wird erstmals aus der Sicht des Kunden bzw. Anwenders gesehen</li>
+						<li>Testbasis sind alle Dokumente, welche das Testobjekt auf Systemebene beschreiben (Softwareanforderungen, Spezifikationen, Benutzungshandbücher, etc.)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Systemtest - Testobjekt</h2>
+					<ul>
+						<li>Das integrierte Testobjekt wird als Ganzes in einer Testumgebung betrachtet</li>
+						<li>Zusätzlich werden System- und Anwnderdokumentation getestet</li>
+						<li>Weitere Tests: Last- und Performancetests, Prüfung von Konfigurationen und Optimierung der Systemkonfiguration</li>
+						<li>Daten werden immer wichtiger. Prüfen ob sie konsistent, vollständig und aktuell sind</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Systemtest - Testumgebung</h2>
+					<ul>
+						<li>Die Testumgebung soll dem Produktivsystems möglichst nahe sein</li>
+						<li>Niemals im Produktivsystem testen:
+							<ul>
+								<li>Ausfall des Systems könnte die Produktivumgebung des Kunden beeinträchtigen</li>
+								<li>Keine bzw. geringe Kontrolle über das System</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Systemtest - Testziele</h2>
+					<ul>
+						<li>Wie gut erfüllt das fertige System die gestellten Anforderungen?</li>
+						<li>Falsche, unvollständige oder widersprüchlich umgesetzte Anforderungen aufdecken</li>
+						<li>Undokumentierte oder vergessene Anforderungen aufdecken</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Systemtest - Probleme in der Praxis</h2>
+					<ul>
+						<li>Wenn keine Anforderungen existieren ist jedes Systemverhalten zulässig</li>
+						<li>Die Anforderungen existieren aber trotzdem: in den Köpfen der Stakeholder</li>
+						<li>Die Anforderungen müssen nachträglich zusammengesammelt und Entscheidungsprozesse müssen angestoßen werden</li>
+						<li>Dies geschieht viel später als im Projekt vorgeschrieben</li>
+						<li>In extremen Fällen kann der Systemtest nur das Scheitern des Projektes feststellen</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Abnahmetest</h2>
+					<ul>
+						<li>Der erste Test, welcher nicht in der Verantwortung des Herstellers liegt</li>
+						<li>Wird vor der Inbetriebnahme durchgeführt</li>
+						<li>In klassischen Entwicklungsmethoden, unter Umständen, die einzige Stufe in der der Kunde direkt eingebunden ist</li>
+						<li>Bei Individualsoftware größerer Aufwand als bei Standardsoftware</li>
+						<li>Als Testbasis werden alle Dokumente verwendet, welche das System aus Anwendersicht beschreiben</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Abnahmetest - Test auf vertragliche Akzeptanz</h2>
+					<ul>
+						<li>Bei Individualsoftware</li>
+						<li>Auf Basis dieses Tests entscheidet der Kunde, ob die Software den Anforderungen entspricht</li>
+						<li>Die Abnahmekriterien sind vertraglich festgelegt → dazu zählen auch gesetzliche Vorschriften</li>
+						<li>Wichtig: der Kunde soll die Abnahmekriterien festlegen</li>
+						<li>Test wird auf Umgebung des Kunden durchgeführt → dazu zählen auch Installation und Konfiguration</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Abnahmetest - Test auf Benutzerakzeptanz</h2>
+					<ul>
+						<li>Wichtig, wenn die Kunde und Benutzer unterschiedliche Personen(gruppen) sind</li>
+						<li>Wenn eine Benutzergruppe es als kompliziert empfindet kann das Projekt scheitern, auch wenn es alle funktionale Anforderungen erfüllt (Usability)</li>
+						<li>Werden vom Kunen organisiert</li>
+						<li>Mit Prototypen kann man dem Desaster entgegensteuern</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Abnahmetest - Akzeptanz durch Systembetreiber</h2>
+					<ul>
+						<li>Stellt sicher, ob das sich das System in die bestehende IT-Landschaft einfügt</li>
+						<li>Untersucht werden: Backup Routinen, Neustart nach Systemabsturz, Datensicherheit und Benutzermanagement</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Abnahmetest - Feldtest</h2>
+					<ul>
+						<li>Wichtig, wenn das System auf vielen Produktivumgebungen laufen soll</li>
+						<li>Ist besonders zu empfehlen, wenn es sich beim System um ein allgemeines Produkt handelt</li>
+						<li>Repräsentative Benutzer erhalten eine Vorabversion</li>
+						<li>Alpha-Test: wird beim Hersteller durchgeführt</li>
+						<li>Beta-Test: wird beim Kunden durchgeführt</li>
+						<li>Darf den hausinternen Systemtest nicht ersetzen</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Testarten</h2>
+				</section>
+
+				<section>
+					<h2>Funktionaler Test</h2>
+					<ul>
+						<li>Basieren auf die gegebenen Anforderungen des Systems</li>
+						<li>Anforderungen werden am Anfang eines Projektes gesammelt</li>
+						<li>Werden meist mittels Blackbox-Testing durchgeführt</li>
+						<li>Zu jeder Anforderung existiert mindestens ein Test</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Nicht Funktionaler Test</h2>
+					<ul>
+						<li>Wie gut wird die Funktionalität gebracht?</li>
+						<li>Testen nicht funktionale Anforderungen (z.B. nach ISO 9126)</li>
+						<li>Problem: diese Anforderungen sind meist schwammig definiert</li>
+						<li>Oft gelten manche diese Anforderungen als selbstverständlich</li>
+						<li>Beispiele: Lasttest, Performancetest, Usabilitytest, Stresstest, Test auf Wartbarkeit, Securitytest, Kompatibilitätstest, ...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Strukturbezogener Test</h2>
+					<ul>
+						<li>Basiert auf die interne Struktur des Systems</li>
+						<li>Werden meist mittels Whitebox-Testing durchgeführt</li>
+						<li>Werden vorwiegend in Komponenten- und Integrationstest eingesetzt</li>
+						<li>Beurteilen oft die Testabdeckung eines Systems → mehr dazu im dynamischen Test</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Änderungsbezogener Test</h2>
+					<ul>
+						<li>Wichtig bei Wartung, Änderung und Erweiterung des Systems</li>
+						<li>Hier müssen neue Tests geschrieben werden und bestehende Tests wiederholt werden</li>
+						<li>Das Testen von bestehenden Tests nennt man Regressionstests</li>
+						<li>Wichtig um unerwünschte Seiteneffekte zu erkennen</li>
+						<li>Tests für Regressionstests müssen wiederholbar sein</li>
+						<li>Regressionstests finden auf allen Teststufen statt und beinhalten funktionale, nicht-funktionale und strukturelle Tests</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Wartungstest</h2>
+				</section>
+
+				<section>
+					<h2>Änderungsbezogener Test</h2>
+					<ul>
+						<li>...</li>
+					</ul>
 				</section>
 
 				<section>

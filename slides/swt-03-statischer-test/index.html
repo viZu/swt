@@ -19,7 +19,7 @@
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-
+		
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -28,6 +28,13 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<style>
+			.col {
+				width: 50%;
+				float: left;
+			}
+		</style>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -60,8 +67,373 @@
 				</section>
 
 				<section>
+					<h2>Grundlegendes</h2>
+					<ul>
+						<li>Im Gegensatz zum dynamischen Test wird kein Code ausgeführt</li>
+						<li>Analyse entweder manuell durch Personen(gruppen) oder automatisiert durch Tools</li>
+						<li>Ziel ist das Finden von Fehlern und Verstößen gegen die Spezifikation, Standards, Wartbarkeit oder Projektplanung</li>
+						<li>Die Ergebnisse kann man zur Optimierung der Entwicklungsprozesse nutzen</li>
+					</ul>
+				</section>
+
+				<section>
 					<h2>Manuelle Analyse</h2>
-					<p>...</p>
+				</section>
+
+				<section>
+					<h2>Grundlagen</h2>
+					<ul>
+						<li>Nutzung der menschlichen Analysefähigkeit</li>
+						<li>Lesen und Analyse von Dokumenten</li>
+						<li>Es existieren unterschiedliche Vorgehensweisen (von formell zu informell)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Reviews</h2>
+					<ul>
+						<li>Effizientes Mittel zur Qualitätssicherung von Dokumenten</li>
+						<li>Sind verifizierende Methoden im V-Modell</li>
+						<li>Stabilerer Entwicklungsprozess durch keine/weniger Fehler in den Dokumenten</li>
+						<li>Positive Nebenwirkungen: Kostengünstige Fehlerbeseitigung, Verkürzung der Entwicklungszeiten, Aufdeckung von Ungenauigkeiten in Kundenwünschen, Wissensaustausch</li>
+						<li>Erfolgsfaktoren: feste Zielsetzung, Einbindung der passenden Personen</li>
+						<li>Die Vorgehensweise ist bei allen Reviewarten ähnlich</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Grundlegende Vorgehensweise - Planung</h2>
+					<ul>
+						<li>Festlegen von Review- und Prüfkriterien</li>
+						<li>Auswahl der beteiligten Personen</li>
+						<li>Besetzen der Rollen</li>
+						<li>Festlegen von Eingangs- und Endekriterien (formale Reviewarten)</li>
+						<li>Auswahl der Dokumente</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Grundlegende Vorgehensweise - Einführung</h2>
+					<ul>
+						<li>Verteilen der Ziele</li>
+						<li>Erläutern der Ziele, des Prozesses und der Dokumente</li>
+						<li>Prüfung der Eingangskriterien (formale Reviewarten)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Grundlegende Vorgehensweise - Vorbereitung</h2>
+					<ul>
+						<li>Vorbereitung durch Prüfung der Dokumente</li>
+						<li>Notieren von Fehlerzuständen, Fragen und Kommentaren</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Grundlegende Vorgehensweise - Reviewsitzung</h2>
+					<ul>
+						<li>Diskussion oder Protokollierung, mit dokumentierten Ergebnissen oder Protokollen</li>
+						<li>Festhaltung von Fehlerzuständen und Empfehlung zum Umgang mit ihnen</li>
+						<li>Prüfen und Bewerten von Problemen während des physischen Treffens</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Grundlegende Vorgehensweise - Überarbeitung</h2>
+					<ul>
+						<li>Beheben der gefundenen Fehlerzustände durch den Autor</li>
+						<li>Protokollieren des aktualisierten Fehlerstatus</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Grundlegende Vorgehensweise - Nachbearbeitung</h2>
+					<ul>
+						<li>Prüfen ob Fehlerzustände zugewiesen wurden</li>
+						<li>Sammeln von Metriken</li>
+						<li>Prüfung von Endekriterien (formale Reviewarten)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Rollen und Verantwortlichkeiten</h2>
+					<ul>
+						<li>Manager 
+							<ul>
+								<li>Entscheidet Durchführung des Reviews</li>
+								<li>Stellt Zeit im Projektplan zur Verfügung</li>
+								<li>Prüft Endekriterien</li>
+							</ul>
+						</li>
+						<li>Moderator 
+							<ul>
+								<li>Zuständig für den Ablauf des Reviews</li>
+								<li>Vermittelt zwischen Standpunkten</li>
+								<li>Erfolg hängt von ihm/ihr ab</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Rollen und Verantwortlichkeiten</h2>
+					<ul>
+						<li>Autor 
+							<ul>
+								<li>Der Verfasser des zu untersuchenden Dokuments</li>
+								<li>Verantwortlich, dass die Dokumente reviewfähig sind</li>
+							</ul>
+						</li>
+						<li>Gutachter 
+							<ul>
+								<li>Personen mit spezifischen oder fachlichen Hintergrund</li>
+								<li>Identifizieren und beschreiben Fehlerzustände</li>
+								<li>Möglichst viele Sichten besetzen</li>
+							</ul>
+						</li>
+						<li>Protokollant 
+							<ul>
+								<li>Protokolliert Ergebnisse, Probleme und offene Punkte</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Reviewarten</h2>
+					<ul>
+						<li>Je nach Projektgröße und Art können unterschiedliche Reviews zum Einsatz kommen</li>
+						<li>Man unterscheidet zwischen: Walkthrough, Inspektion, Technisches Review und Informelles Review</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Walkthrough</h2>
+					<ul>
+						<li>Wird durch den Autor geleitet</li>
+						<li>Kann in Form von Szenarien oder Probeläufen stattfinden</li>
+						<li>Die Dauer des Reviews ist open-end</li>
+						<li>Wahlweise kann ein Protokollant eingesetzt werden</li>
+						<li>Kann zwischen informell und sehr formell variieren</li>
+						<li>Hauptzweck: Lernen, Verständnis aufbauen und Fehlerzustände finden</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Inspektion</h2>
+					<ul>
+						<li>Wird durch einen geschulten Moderator geleitet</li>
+						<li>Prüfung durch gleichgestellte Mitarbeiter</li>
+						<li>klar definierte Rollen</li>
+						<li>Sammeln von Metriken</li>
+						<li>Sehr formaler Prozess</li>
+						<li>Vorbereitung vor der Sitzung</li>
+						<li>Inspektionsbericht mit Liste der Befunde</li>
+						<li>Formaler Prozess für Folgeaktivitäten</li>
+						<li>Hauptzweck: Fehlerzustände finden</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Technisches Review</h2>
+					<ul>
+						<li>Dokumentierter und definierter Fehlerfindungsprozess</li>
+						<li>Es nehmen hauptsächlich gleichgestellte Mitarbeiter daran teil</li>
+						<li>Kann als Peer Review durchgeführt werden</li>
+						<li>Idealerweise durch geschulten Moderator geleitet</li>
+						<li>Vorbereitung der Gutachter vor der Sitzung</li>
+						<li>Kann zwischen informell und formell variieren</li>
+						<li>Hauptzweck: Diskussion, Entscheidungen treffen, Alternativen finden, Fehlerzustände finden, technische Probleme lösen</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Informelles Review</h2>
+					<ul>
+						<li>Kein formaler Prozess</li>
+						<li>Meist durch Autor initiiert</li>
+						<li>Kann in Form des pair programming durchgeführt werden</li>
+						<li>Ergebnisse können dokumentiert werden</li>
+						<li>Nutzen hängt von den Gutachern ab</li>
+						<li>Hauptzweck: günstiger Weg eine Verbesserung zu erreichen</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Welche Reviewart wird gewählt?</h2>
+					<ul>
+						<li>Reviewart hängt stark von der geforderten Qualität und Aufwand ab</li>
+						<li>Man sollte sich folgende Fragen stellen:
+							<ul>
+								<li>Ist eine Dokumentation notwendig?</li>
+								<li>Ist die Terminkoordination einfach?</li>
+								<li>Ist Fachwissen gefragt?</li>
+								<li>Wie hoch soll der Vorbereitungsaufwand sein?</li>
+								<li>Wie hoch ist der Formalisierungsgrad der Dokumente?</li>
+								<li>Wie groß ist die Unterstützungsgrad des Managements?</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Erfolgsfaktoren</h2>
+					<ul>
+						<li>Klar definierte Ziele</li>
+						<li>Geeignete Personen auswählen</li>
+						<li>Tester als Gutachter einsetzen</li>
+						<li>Gefundene Fehlerzustände werden positiv aufgenommen</li>
+						<li>Review in einer vertrauten Atmosphäre</li>
+						<li>Es werden die passenden Reviewtechniken eingesetzt</li>
+						<li>Verwenden von Checklisten und Rollen</li>
+						<li>Das Management unterstützt den Reviewprozess</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Automatisierte Analyse</h2>
+				</section>
+
+				<section>
+					<h2>Grundlegendes</h2>
+					<ul>
+						<li>Im Gegensatz zu den Reviews durch Tools</li>
+						<li>Das Sysyem wird dabei nicht ausgeführt</li>
+						<li>Das Dokument muss allerdings streng nach einer vorgegeben Struktur geformt sein (z.B. Code, Klassendiagramme)</li>
+						<li>Können jederzeit, auch vor dem Test, eingesetzt werden</li>
+						<li>Weisen auf Nichteinhaltung von Standards hin</li>
+						<li>Der Output der Tools muss verarbeitet werden</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Compiler</h2>
+					<ul>
+						<li>Jeder Compiler ist ein statische Analysetool</li>
+						<li>Weist darauf hin, dass die Syntax nicht eingehalten wird</li>
+						<li>Viele Compiler führen noch zusätzliche Analysen durch
+							<ul>
+								<li>Prüfung auf Typkonformität</li>
+								<li>Ermittlung von nicht deklarierten Variablen</li>
+								<li>Nicht erreichbarer Code</li>
+								<li>Prüfung von Arraygrenzen</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Konventionen und Standards</h2>
+					<ul>
+						<li>Kann mittels bestimmter Analysatoren überprüft werden</li>
+						<li>Wurden die firmeninternen Programmierkonventionen eingehalten?</li>
+						<li>Es ist wichtig, dass nur Richtlinien eingeführt werden, welche automatisiert überprüft werden können</li>
+						<li>Ansonsten wird es kaum jemand umsetzen</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Datenflussanalyse</h2>
+					<ul>
+						<li>Überprüfung der Verwendung von Daten im Code</li>
+						<li>Finden von Datenflussanomalien (Unstimmigkeiten im Code)</li>
+						<li>Variablen können drei Zustände haben → <b>d</b>efiniert, <b>r</b>eferenziert, <b>u</b>ndefieniert</li>
+						<li>Daraus leitet man drei Arten von Datenflussanonalien ab → ur-Anomalie, du-Anomalie und dd-Anomalie</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Arten der Datenflussanomalien</h2>
+					<ul>
+						<li>ur-Anomalie
+							<ul>
+								<li>Ein undefinierter Wert (u) wird gelesen (r)</li>
+							</ul>
+						</li>
+						<li>du-Anomalie
+							<ul>
+								<li>Die Variable erhält einen Wert (d), der ungültig (u) wird, ohne dass er verwendet wird</li>
+							</ul>
+						</li>
+						<li>dd-Anomalie
+							<ul>
+								<li>Die Variable erhält ein zweites Mal einen Wert (d) ohne, dass der erste Wert (d) verwendet wurde</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Beispiel Datenflussanomalien</h2>
+					<pre>
+						<code class="javascript" data-trim data-noescape>
+function change(min, max) {
+	var tmp;
+	if(min > max) {
+		max = tmp; // ur-Anomalie
+		max = min; // dd-Anomalie
+		tmp = min; // du-Anomalie
+	}
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Kontrollflussanalyse</h2>
+					<ul>
+						<li>Ein Programmcode wird in einen Kontrollflussgraphen übersetzt</li>
+						<li>Durch die Anschaulichkeit des Graphen lassen sich Abläufe leicht erfassen und Anomalien erkennen</li>
+						<li>Mögliche Anomalien: Ausbrechen aus Schleifen, Endlosschleifen oder ein Programmstück welches mehrere Ausgänge hat</li>
+						<li>Wie bei den Datenflussanalyse, müssen diese Anomalien keine Fehlerzustände sein</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Kontrollflussanalyse</h2>
+					<img src="img/kontrollfluss.png" style="height: 14em; padding: 0.5em">
+				</section>
+
+				<section>
+					<h2>Metriken</h2>
+					<ul>
+						<li>Mit den statischen Analysewerkzeugen können auch Messwerte geliefert werden</li>
+						<li>Mit Hilfe dieser Metriken können Qualitätsmerkmale gemessen werden</li>
+						<li>Ein Beispiel einer Metrik: die zyklomatisch Zahl</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Zyklomatische Zahl</h2>
+					<ul>
+						<li>Misst die strukturelle Komplexität des Codes</li>
+						<li>Sie sollte nicht größer als 10 sein</li>
+						<li>Sie gibt auch, die Anzahl der unabhängigen Pfade im Programmstück an (wichtig bei 100%-er Zweigabdeckung)</li>
+						<li>Sie ist ein Hinweis für den Aufwand eines Tests</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Zyklomatische Zahl</h2>
+					<p>Berechnung der zyklomatischen Zahl eines Graphen G:</p>
+					<blockquote>v(G) = e - n + 2 <br/><br/>
+						v(G) - zyklomatische Zahl des Graphen G<br/>
+						e - Anzahl der kanten des Graphen<br/>
+						n - Anzahl der Knoten des Graphen
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Beispiel - Zyklomatische Zahl</h2>
+					<div class="row">
+						<div class="col"><img src="img/kontrollfluss.png" style="height: 13em; padding: 0.5em"></div>
+						<div class="col">
+							<blockquote style="width: 100%; margin-top: 200px">v(G) = e - n + 2 = 17 - 13 + 2 = 6 <br/><br/>
+								e (Anzahl der Kanten) = 17<br/>
+								n (Anzahl der Knoten) = 13<br/>
+							</blockquote>
+						</div>
+					</div>
 				</section>
 
 				<section>

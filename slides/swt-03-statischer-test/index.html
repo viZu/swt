@@ -19,7 +19,7 @@
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-
+		
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -28,6 +28,13 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<style>
+			.col {
+				width: 50%;
+				float: left;
+			}
+		</style>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -288,38 +295,145 @@
 				</section>
 
 				<section>
+					<h2>Grundlegendes</h2>
+					<ul>
+						<li>Im Gegensatz zu den Reviews durch Tools</li>
+						<li>Das Sysyem wird dabei nicht ausgeführt</li>
+						<li>Das Dokument muss allerdings streng nach einer vorgegeben Struktur geformt sein (z.B. Code, Klassendiagramme)</li>
+						<li>Können jederzeit, auch vor dem Test, eingesetzt werden</li>
+						<li>Weisen auf Nichteinhaltung von Standards hin</li>
+						<li>Der Output der Tools muss verarbeitet werden</li>
+					</ul>
+				</section>
+
+				<section>
 					<h2>Compiler</h2>
 					<ul>
-						<li></li>
+						<li>Jeder Compiler ist ein statische Analysetool</li>
+						<li>Weist darauf hin, dass die Syntax nicht eingehalten wird</li>
+						<li>Viele Compiler führen noch zusätzliche Analysen durch
+							<ul>
+								<li>Prüfung auf Typkonformität</li>
+								<li>Ermittlung von nicht deklarierten Variablen</li>
+								<li>Nicht erreichbarer Code</li>
+								<li>Prüfung von Arraygrenzen</li>
+							</ul>
+						</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Konventionen und Standards</h2>
 					<ul>
-						<li></li>
+						<li>Kann mittels bestimmter Analysatoren überprüft werden</li>
+						<li>Wurden die firmeninternen Programmierkonventionen eingehalten?</li>
+						<li>Es ist wichtig, dass nur Richtlinien eingeführt werden, welche automatisiert überprüft werden können</li>
+						<li>Ansonsten wird es kaum jemand umsetzen</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Datenflussanalyse</h2>
 					<ul>
-						<li></li>
+						<li>Überprüfung der Verwendung von Daten im Code</li>
+						<li>Finden von Datenflussanomalien (Unstimmigkeiten im Code)</li>
+						<li>Variablen können drei Zustände haben → <b>d</b>efiniert, <b>r</b>eferenziert, <b>u</b>ndefieniert</li>
+						<li>Daraus leitet man drei Arten von Datenflussanonalien ab → ur-Anomalie, du-Anomalie und dd-Anomalie</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Arten der Datenflussanomalien</h2>
+					<ul>
+						<li>ur-Anomalie
+							<ul>
+								<li>Ein undefinierter Wert (u) wird gelesen (r)</li>
+							</ul>
+						</li>
+						<li>du-Anomalie
+							<ul>
+								<li>Die Variable erhält einen Wert (d), der ungültig (u) wird, ohne dass er verwendet wird</li>
+							</ul>
+						</li>
+						<li>dd-Anomalie
+							<ul>
+								<li>Die Variable erhält ein zweites Mal einen Wert (d) ohne, dass der erste Wert (d) verwendet wurde</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Beispiel Datenflussanomalien</h2>
+					<pre>
+						<code class="javascript" data-trim data-noescape>
+function change(min, max) {
+	var tmp;
+	if(min > max) {
+		max = tmp; // ur-Anomalie
+		max = min; // dd-Anomalie
+		tmp = min; // du-Anomalie
+	}
+}
+						</code>
+					</pre>
 				</section>
 
 				<section>
 					<h2>Kontrollflussanalyse</h2>
 					<ul>
-						<li></li>
+						<li>Ein Programmcode wird in einen Kontrollflussgraphen übersetzt</li>
+						<li>Durch die Anschaulichkeit des Graphen lassen sich Abläufe leicht erfassen und Anomalien erkennen</li>
+						<li>Mögliche Anomalien: Ausbrechen aus Schleifen, Endlosschleifen oder ein Programmstück welches mehrere Ausgänge hat</li>
+						<li>Wie bei den Datenflussanalyse, müssen diese Anomalien keine Fehlerzustände sein</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Kontrollflussanalyse</h2>
+					<img src="img/kontrollfluss.png" style="height: 14em; padding: 0.5em">
 				</section>
 
 				<section>
 					<h2>Metriken</h2>
 					<ul>
-						<li></li>
+						<li>Mit den statischen Analysewerkzeugen können auch Messwerte geliefert werden</li>
+						<li>Mit Hilfe dieser Metriken können Qualitätsmerkmale gemessen werden</li>
+						<li>Ein Beispiel einer Metrik: die zyklomatisch Zahl</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Zyklomatische Zahl</h2>
+					<ul>
+						<li>Misst die strukturelle Komplexität des Codes</li>
+						<li>Sie sollte nicht größer als 10 sein</li>
+						<li>Sie gibt auch, die Anzahl der unabhängigen Pfade im Programmstück an (wichtig bei 100%-er Zweigabdeckung)</li>
+						<li>Sie ist ein Hinweis für den Aufwand eines Tests</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Zyklomatische Zahl</h2>
+					<p>Berechnung der zyklomatischen Zahl eines Graphen G:</p>
+					<blockquote>v(G) = e - n + 2 <br/><br/>
+						v(G) - zyklomatische Zahl des Graphen G<br/>
+						e - Anzahl der kanten des Graphen<br/>
+						n - Anzahl der Knoten des Graphen
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Beispiel - Zyklomatische Zahl</h2>
+					<div class="row">
+						<div class="col"><img src="img/kontrollfluss.png" style="height: 14em; padding: 0.5em"></div>
+						<div class="col">
+							<blockquote style="width: 100%; margin-top: 200px">v(G) = e - n + 2 = 17 - 13 + 2 = 6 <br/><br/>
+								e (Anzahl der Kanten) = 17<br/>
+								n (Anzahl der Knoten) = 13<br/>
+							</blockquote>
+						</div>
+					</div>
 				</section>
 
 				<section>

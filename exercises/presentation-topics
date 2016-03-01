@@ -1,15 +1,27 @@
-Performance Test
-Last Test
-Stress Test
-Some interesting testing tools: JMeter, Neoload, Selenium, Fitnesse, etc.
-test driven development
-behaviour driven development
-continous integration
-code coverage tools
-static analysis tools
+Präsentationsthemen
+
+* Performance-, Last- und Stresstest
+* Test driven development
+* Behaviour driven development
+* Continous integration
+* Code coverage tools
+* Static analysis tools
+* Testrollen
+* Kosten- und Wirtschaftlichkeitsaspekte
+
+Testing tools:
+* JMeter
+* Neoload
+* Selenium
+* Fitnesse
+* Appium
+
+Eigene Vorschläge werden gerne entgegengenommen.
+
+Einteilung und bekanntgabe der Teams erfolgt selbstständig via Moodle Forum.
 
 Pro Verband: 8 Gruppen
-Gruppengröße: ca 4 Personen
+Gruppengröße: 3-4 Personen
 Dauer: ca 8-10min
 
 In Übungseinheit 2: 90min -> durch 8 Gruppen = 12min pro Gruppe

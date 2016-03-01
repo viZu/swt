@@ -57,7 +57,6 @@
 						<li>Softwareentwicklungsmodelle</li>
 						<li>Teststufen</li>
 						<li>Testarten</li>
-						<li>Wartungstest ...</li>
 					</ul>
 				</section>
 
@@ -116,11 +115,11 @@
 
 				<section>
 					<h2>Iterativ inkrementelle Entwicklungsmodelle</h2>
+					<p>Ziel: nicht an den Kundenerwartungen vorbei entwickeln</p>
 					<ul>
-						<li>Ziel: nicht an den Kundenerwartungen vorbei entwickeln</li>
 						<li>Testen muss sich dem Vorgehen anpassen</li>
 						<li>Für jeden Zyklus und jede Komponente müssen wiederholbare Tests erstellt werden</li>
-						<li>Kontinuirliche Integrations- und Regressionstests</li>
+						<li>Kontinuierliche Integrations- und Regressionstests</li>
 						<li>Wenn Vorraussetzungen nicht erfüllt: Gefahr auf Verringerung der Zuverlässigkeit</li>
 						<li>Gefahrreduktion: V-Modell für jeden Zyklus</li>
 					</ul>
@@ -132,20 +131,13 @@
 				</section>
 
 				<section>
-					<h2>Testen innerhalb eines Entwicklungslebenszyklus</h2>
-					<ul>
-						<li></li>
-					</ul>
-				</section>
-
-				<section>
 					<h2>Teststufen</h2>
 				</section>
 
 				<section>
 					<h2>Teststufen allgemein</h2>
 					<ul>
-						<p>Jede Teststufe hat folgende Eigenschaften, welche spezifisch für diese sind</p>
+						<p>Jede Teststufe hat folgende Eigenschaften, welche spezifisch für diese ist:</p>
 						<ul>
 							<li>Testobjekte</li>
 							<li>Testumgebung</li>
@@ -181,7 +173,7 @@
 						<li>Zur Erstellung der Testtreiber ist Entwickler-Know-How notwendig</li>
 						<li>Tests werden in der Programmiersprache der Komponente geschrieben</li>
 						<li>Aus diesen Gründen werden die Komponententests oft von den Entwicklern geschrieben (Entwicklertest)</li>
-						<li>Komponententest wird oft mit Debugging verwechselt</li>
+						<li>Wird oft mit Debugging verwechselt</li>
 					</ul>
 				</section>
 
@@ -219,7 +211,7 @@
 							<ul>
 								<li>Wie leicht lässt sich der Code ändern oder verbessern?</li>
 								<li>Gilt für Entwickler des Programms und Kollegen</li>
-								<li>Wichtig hierbei: Codestruktur, Kommentare, Dokumentation usw.</li>
+								<li>Wichtig hierbei: Codestruktur, Kommentare, Dokumentation, usw.</li>
 								<li>Lässt sich nicht durch dynamisches Testen realisieren</li>
 							</ul>
 						</li>
@@ -231,7 +223,7 @@
 					<ul>
 						<li>Möglich als Whitebox-Test, da sehr entwicklungsnah (Debugging)</li>
 						<li>Generell aber eher als Blackbox-Test</li>
-						<li>Bei agilen Methoden: Test-first Ansatz oder Test-Driven Development</li>
+						<li>Bei agilen Methoden: Test-First-Ansatz oder Test Driven Development (TDD)</li>
 					</ul>
 				</section>
 
@@ -302,16 +294,13 @@
 
 				<section>
 					<h2>Integrationstest - Teststrategien</h2>
+					<p>In welcher Reihenfolge werden Komponenten integriert?</p>
 					<ul>
-						<li>In welcher Reihenfolge werden Komponenten integriert?
-							<ul>
-								<li>Wichtig ist das Verhältnis zwischen Kosten und Nutzen</li>
-								<li>Komponenten werden zu unterschiedlichen Zeitpunkten fertiggestellt</li>
-								<li>Aufgabe des Testmanagers</li>
-								<li>Hängt von Randbedingungen ab, welche analysiert werden müssen (Systemarchitektur, Projektplan, Testkonzept)</li>
-								<li>Es existieren mehrere Basisstrategien</li>
-							</ul>
-						</li>
+						<li>Wichtig ist das Verhältnis zwischen Kosten und Nutzen</li>
+						<li>Komponenten werden zu unterschiedlichen Zeitpunkten fertiggestellt</li>
+						<li>Aufgabe des Testmanagers</li>
+						<li>Hängt von Randbedingungen ab, welche analysiert werden müssen (Systemarchitektur, Projektplan, Testkonzept)</li>
+						<li>Es existieren mehrere Basisstrategien</li>
 					</ul>
 				</section>
 
@@ -367,7 +356,7 @@
 						<li>Das integrierte Testobjekt wird als Ganzes in einer Testumgebung betrachtet</li>
 						<li>Zusätzlich werden System- und Anwnderdokumentation getestet</li>
 						<li>Weitere Tests: Last- und Performancetests, Prüfung von Konfigurationen und Optimierung der Systemkonfiguration</li>
-						<li>Daten werden immer wichtiger. Prüfen ob sie konsistent, vollständig und aktuell sind</li>
+						<li>Daten werden immer wichtiger: prüfen ob sie konsistent, vollständig und aktuell sind</li>
 					</ul>
 				</section>
 
@@ -431,7 +420,7 @@
 					<ul>
 						<li>Wichtig, wenn die Kunde und Benutzer unterschiedliche Personen(gruppen) sind</li>
 						<li>Wenn eine Benutzergruppe es als kompliziert empfindet kann das Projekt scheitern, auch wenn es alle funktionale Anforderungen erfüllt (Usability)</li>
-						<li>Werden vom Kunen organisiert</li>
+						<li>Werden vom Kunden organisiert</li>
 						<li>Mit Prototypen kann man dem Desaster entgegensteuern</li>
 					</ul>
 				</section>
@@ -474,7 +463,7 @@
 					<h2>Nicht Funktionaler Test</h2>
 					<ul>
 						<li>Wie gut wird die Funktionalität gebracht?</li>
-						<li>Testen nicht funktionale Anforderungen (z.B. nach ISO 9126)</li>
+						<li>Testen nicht funktionale Anforderungen (z.B. nach ISO 9126, ISO/IEC 25010)</li>
 						<li>Problem: diese Anforderungen sind meist schwammig definiert</li>
 						<li>Oft gelten manche diese Anforderungen als selbstverständlich</li>
 						<li>Beispiele: Lasttest, Performancetest, Usabilitytest, Stresstest, Test auf Wartbarkeit, Securitytest, Kompatibilitätstest, ...</li>
@@ -500,17 +489,6 @@
 						<li>Wichtig um unerwünschte Seiteneffekte zu erkennen</li>
 						<li>Tests für Regressionstests müssen wiederholbar sein</li>
 						<li>Regressionstests finden auf allen Teststufen statt und beinhalten funktionale, nicht-funktionale und strukturelle Tests</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Wartungstest</h2>
-				</section>
-
-				<section>
-					<h2>Änderungsbezogener Test</h2>
-					<ul>
-						<li>...</li>
 					</ul>
 				</section>
 
